@@ -84,7 +84,7 @@ function Reels({ homeTab }) {
         return (
             <View style={[{ flex: 1, height: Dimensions.get('screen').height, width: Dimensions.get('window').width}, index % 2 == 0 ? <ShimmerPlaceholder /> : <ShimmerPlaceholder />]}>
                 <ReelsComponent ref={postSingleRef => (mediaRefs.current[item] = postSingleRef)} videoUri={cdnVideos[index % cdnVideos.length]} />
-                <TouchableOpacity style={styles.callBtn} onPress={() => Linking.openURL('tel:8448407994')}>
+                <TouchableOpacity style={styles.callBtn} onPress={() => Linking.openURL('tel:8929007192')}>
                     <Icon name="call" size={30} color="blue" backgroundColor="white"/>
                 </TouchableOpacity>
 
