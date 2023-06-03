@@ -11,7 +11,7 @@ import { useBackHandler } from '@react-native-community/hooks';
 import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder'
 import LinearGradient from 'expo-linear-gradient';
 function Reels({ homeTab }) {
-    const [cdnVideos, setcdnVideos] = useState()
+    const [cdnVideos, setcdnVideos] = useState([])
     const isFocused = useIsFocused();
     const mediaRefs = useRef([])
     const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient)
@@ -55,7 +55,7 @@ function Reels({ homeTab }) {
       }, []);
 
 
-    const onViewableItemsChanged = useRef(({ changed }) => {
+    const onViewableItemsChanged = ({ changed }) => {
         let currentKey;
         changed.forEach((element) => {
             const cell = mediaRefs.current[element.key];
@@ -75,7 +75,7 @@ function Reels({ homeTab }) {
                 cell.stop();
             }
         });
-    });
+    }
 
 
 
@@ -104,14 +104,12 @@ function Reels({ homeTab }) {
                 initialNumToRender={1}
                 maxToRenderPerBatch={1}
                 removeClippedSubviews
-                viewabilityConfig={{
-                    itemVisiblePercentThreshold: 100
-                }}
+                snapToInterval={Dimensions.get("screen").height}
                 renderItem={renderItem}
                 pagingEnabled
                 keyExtractor={item => item}
                 decelerationRate={'fast'}
-                onViewableItemsChanged={onViewableItemsChanged.current}
+                onViewableItemsChanged={onViewableItemsChanged}
             />
         </View>
     )
