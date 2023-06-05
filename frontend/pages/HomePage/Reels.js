@@ -88,7 +88,7 @@ function Reels({ homeTab }) {
                     <Icon name="call" size={30} color="blue" backgroundColor="white"/>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.whatsappBtn} onPress={() => Linking.openURL(`https://wa.me/8448407994?text=Hey sir i would like to discus about ${item} property.`)}>
+                <TouchableOpacity style={styles.whatsappBtn} onPress={() => Linking.openURL(`https://wa.me/8929007192?text=Hey sir i would like to discus about ${item} property.`)}>
                     <Icons name="whatsapp" size={30} color={"#32d46f"}/>
                 </TouchableOpacity>
             </View>
